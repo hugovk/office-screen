@@ -5,21 +5,22 @@
     <link rel="shortcut icon" type="image/x-icon" href=
     "http://style.codeforamerica.org/0/favicon.ico">
     <script type="text/javascript">
-   var urls = [
-              "http://www.tweetbeam.com/show?query=codeforamerica",
-              "http://project-monitor.codeforamerica.org/",
-              "http://drewrwilson.github.io/Countdown-to-the-Summit/",
-              "http://www.chillestmonkey.com",
-              "http://kitchen-stories.herokuapp.com",
-              /*
-              Refused to display in a frame:
-              "https://facebook.com/",
-              "https://m.facebook.com/",
-              "https://gmail.com/&output=embed",
-              "https://travis-ci.org/",
-              "http://travis-lite.com/",
-              "http://www.tumblr.com/dashboard",
-              */
+   var timouts_urls = [
+    /* First value is timeout in minutes for that URL */
+      [2, "http://www.tweetbeam.com/show?query=codeforamerica"],
+      [3, "http://project-monitor.codeforamerica.org/"],
+      [2, "http://drewrwilson.github.io/Countdown-to-the-Summit/"],
+      [2, "http://www.chillestmonkey.com"],
+      [3, "http://kitchen-stories.herokuapp.com"],
+      /*
+      Refused to display in a frame:
+      "https://facebook.com/",
+      "https://m.facebook.com/",
+      "https://gmail.com/&output=embed",
+      "https://travis-ci.org/",
+      "http://travis-lite.com/",
+      "http://www.tumblr.com/dashboard",
+      */
            ];
 
             var random = true; // set to false for sequential display
@@ -31,14 +32,14 @@
               // First run
               if (idx == undefined) {
                 if (random) {
-                  idx = next = Math.floor(Math.random()*urls.length);
+                  idx = next = Math.floor(Math.random()*timouts_urls.length);
                 } else {
                   idx = 0;
                 }
               }
 
               // set the src
-              f.src = urls[idx];
+              f.src = timouts_urls[idx][1];
 
               // Call the next load after 5 minutes only after
               // this iframe loads
@@ -46,15 +47,15 @@
                     var next = idx
                     <!-- TODO handle case for only one URL? -->
                     while(next == idx) {
-                        next = Math.floor(Math.random()*urls.length);
+                        next = Math.floor(Math.random()*timouts_urls.length);
                     }
 
                 } else {
-                    var next = ++idx % urls.length;
+                    var next = ++idx % timouts_urls.length;
                 }
                 setTimeout(function(){
                     showUrl(next);
-                }, 3 * 60 * 1000);
+                }, timouts_urls[idx][0] * 60 * 1000);
            }
 
     </script>
