@@ -7,7 +7,13 @@ of the time, but there are other relevant things to add to the rotation.
 
 These are them.
 
+
+Kitchen Stories Dashboard
+----
+
+The source code for the "kitchen stories" dashboard can be found on the [kitchen-stories branch](https://github.com/codeforamerica/office-screen/tree/kitchen-stories).
+
 Contributing
 ----
 
-Pull requests welcome. The URLs to rotate are listed at the top of index.html.
+Pull requests welcome. The URLs to rotate are listed at the top of refresh.html.

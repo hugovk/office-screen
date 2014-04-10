@@ -1,67 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+	"http://www.w3.org/TR/html4/frameset.dtd">
 <html lang="en">
-  <head>
-    <title>Code for America Office Screens</title>
-    <link rel="shortcut icon" type="image/x-icon" href=
-    "http://style.codeforamerica.org/0/favicon.ico">
-    <script type="text/javascript">
-   var urls = [
-              "http://www.tweetbeam.com/show?query=codeforamerica",
-              "http://project-monitor.codeforamerica.org/",
-              "http://drewrwilson.github.io/Countdown-to-the-Summit/",
-              "http://www.chillestmonkey.com",
-              "http://kitchen-stories.herokuapp.com",
-              /*
-              Refused to display in a frame:
-              "https://facebook.com/",
-              "https://m.facebook.com/",
-              "https://gmail.com/&output=embed",
-              "https://travis-ci.org/",
-              "http://travis-lite.com/",
-              "http://www.tumblr.com/dashboard",
-              */
-           ];
-
-            var random = true; // set to false for sequential display
-
-           function showUrl(idx) {
-
-              var f = document.getElementById("f");
-
-              // First run
-              if (idx == undefined) {
-                if (random) {
-                  idx = next = Math.floor(Math.random()*urls.length);
-                } else {
-                  idx = 0;
-                }
-              }
-
-              // set the src
-              f.src = urls[idx];
-
-              // Call the next load after 5 minutes only after
-              // this iframe loads
-                if (random) {
-                    var next = idx
-                    <!-- TODO handle case for only one URL? -->
-                    while(next == idx) {
-                        next = Math.floor(Math.random()*urls.length);
-                    }
-
-                } else {
-                    var next = ++idx % urls.length;
-                }
-                setTimeout(function(){
-                    showUrl(next);
-                }, 3 * 60 * 1000);
-           }
-
-    </script>
-  </head>
-  <body onload="showUrl()" class="app-chrome">
-    <iframe id="f" src="about:blank" style=
-    "position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
-    name="f"></iframe>
-  </body>
+<head>
+	<title>Code for America Office Screen</title>
+</head>
+<frameset rows="*, 40" border="0">
+<frame frameborder="0" scrolling="no" src="refresh.html">
+<frame frameborder="0" scrolling="no" src="footer.html">
+</frameset>
 </html>
