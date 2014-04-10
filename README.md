@@ -16,4 +16,4 @@ The source code for the "kitchen stories" dashboard can be found on the [kitchen
 Contributing
 ----
 
-Pull requests welcome. The URLs to rotate are listed at the top of refresh.html.
+Pull requests welcome. The URLs to rotate are listed at the top of [refresh.html](refresh.html).
